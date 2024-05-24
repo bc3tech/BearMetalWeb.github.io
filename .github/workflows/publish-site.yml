@@ -7,6 +7,7 @@ on:
     paths-ignore:
       - 'README.md' # Exclude changes to the root README.md
       - '.github/workflows/**' # Exclude changes to any GitHub Action workflows
+  workflow_dispatch: 
 
 jobs:
   deploy:
@@ -23,8 +24,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install ffc-mkdocs-video
-          pip install mkdocs-material
+          pip install CairoSVG mkdocs-material mkdocs-minify-plugin mkdocs-redirects mkdocs-rss-plugin ffc-mkdocs-video --no-cache-dir
 
       - name: Configure git
         run: |
